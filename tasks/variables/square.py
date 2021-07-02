@@ -12,7 +12,7 @@
 - square(12) -> (48, 144, 16.970562748477143)
 - square(7) -> (28, 49, 9.899494936611665)
 """
-
+from math import sqrt
 
 def square(side: str) -> tuple:
     """Вычисляет периметр, площадь, диагональ квадрата по стороне
@@ -23,10 +23,11 @@ def square(side: str) -> tuple:
     :return: Кортеж (Периметр, Площадь, Диагональ)
     :rtype: tuple
     """
-    perimeter = None
-    s_square = None
-    diagonal = None
-    return perimeter, s_square, diagonal
+    side = float(side)
+    perimeter = side * 4
+    s_square = side ** 2
+    diagonal = side * sqrt(2)
+    return perimeter, s_square, round(diagonal)
 
 
 if __name__ == '__main__':
